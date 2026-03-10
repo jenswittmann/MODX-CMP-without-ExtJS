@@ -1,0 +1,19 @@
+name: cmp
+lowCaseName: cmp
+description: CMP Database for MODX
+author: Jens Wittmann
+namespace: cmp
+version: 0.1.0
+
+menus:
+  - text: 'CMP Sample'
+    action: index
+    namespace: cmp
+    icon: '<span class="icon icon-database"></span>'
+
+build:
+  requires: {"pdoTools": ">=3.0.0"}
+
+database:
+  tables:
+    - CMP\Database\Model\Sample

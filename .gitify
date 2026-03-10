@@ -1,0 +1,15 @@
+data_directory: _gitify/
+backup_directory: _backup/
+data:
+    menus:
+        class: modMenu
+        primary:
+            - text
+        where:
+            - { text: 'CMP Sample' }
+    namespaces:
+        class: modNamespace
+        primary:
+            - name
+        where:
+            - { name: cmp }

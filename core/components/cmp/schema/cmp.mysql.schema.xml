@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="CMP\Database\Model" baseClass="xPDO\Om\xPDOObject" platform="mysql" defaultEngine="InnoDB" version="3.0">
+	<object class="Sample" table="sample" extends="xPDO\Om\xPDOObject">
+        <field key="id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+		<field key="content" dbtype="text" phptype="string" null="false" default="" />
+		<field key="createdon" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+			<column key="id" collation="A" null="false" />
+        </index>
+	</object>
+</model>

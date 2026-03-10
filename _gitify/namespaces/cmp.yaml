@@ -1,0 +1,3 @@
+name: cmp
+path: '{core_path}components/cmp/'
+assets_path: '{assets_path}components/cmp/'

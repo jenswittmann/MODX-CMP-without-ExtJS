@@ -1,0 +1,6 @@
+text: 'CMP Sample'
+parent: topnav
+action: index
+icon: '<span class="icon icon-database"></span>'
+menuindex: 4
+namespace: cmp

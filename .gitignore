@@ -1,0 +1,3 @@
+.DS_Store
+/core/components/cmp/composer.lock
+core/components/cmp/vendor/*
