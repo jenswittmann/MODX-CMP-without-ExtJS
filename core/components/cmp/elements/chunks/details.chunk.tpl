@@ -39,6 +39,54 @@
                     </div>
                 </div>
 
+                <div
+                    x-data="{
+                        src: ''
+                    }"    
+                    class="w-100 mb4"
+                >
+                    <label for="image" class="form__label">Image</label>
+                    <div class="flex g1">
+                        <div class="form__field--input">
+                            <input
+                                :value="src.fullRelativeUrl"
+                                type="text"
+                                name="image"
+                                value="{$item.image | htmlent}"
+                                class="br1"
+                                readonly
+                            />                  
+                        </div>
+                        <button
+                            x-ref="imageselect"
+                            @click="
+                                MODx.load({
+                                    xtype: 'modx-browser',
+                                    id: Ext.id(),
+                                    multiple: true,
+                                    listeners: {
+                                        select: (img) => {
+                                            console.log(img);
+                                            src = img;
+                                        }
+                                    },
+                                    source: 1,
+                                    openTo: '/'
+                                }).show();
+                            "
+                            type="button"
+                            id="selectimage"
+                            class="x-btn primary-button b"
+                        >select</button>
+                    </div>
+                    <template x-if="src">
+                        <img
+                            :src="src.image"
+                            class="db w-50 mt1 aspect-ratio--16x9"
+                        />
+                    </template>
+                </div>
+
                 <button type="submit" class="x-btn primary-button b">Submit</button>
 
             </form>
