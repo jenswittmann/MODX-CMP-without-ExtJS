@@ -32,11 +32,30 @@
                     </div>
                 </div>
             
-                <div class="w-100 mb4">
+                <div
+                    x-data="{
+                        content: '{$item.content | htmlent}',
+                    }"
+                    x-init="
+                        pell.init({
+                            element: $refs.editor,
+                            onChange: (html) => {
+                                content = html;
+                            },
+                            defaultParagraphSeparator: 'p',
+                            actions: [ 'bold' ]
+                        });
+                        $refs.editor.content.innerHTML = '{$item.content | htmlent}';
+                    "
+                    class="w-100 mb4"
+                >
                     <label for="title" class="form__label">Content</label>
-                    <div class="form__field--textarea">
-                        <textarea name="content" class="br1">{$item.content | htmlent}</textarea>
-                    </div>
+                    <div x-ref="editor" class="pell"></div>
+                    <input
+                        :value="content"
+                        name="content"
+                        class="clip"
+                    />
                 </div>
 
                 <div
